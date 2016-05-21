@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TFh-6h-Kaf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Movie View Controller-->
+        <!--Now Playing-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MovieViewController" customModule="FlickMovie" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="183"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Td-WU-hxW" id="plq-xW-77h">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="182.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="183"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZX-lB-qKv">
@@ -36,7 +36,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BWC-0m-xGM">
-                                                    <rect key="frame" x="8" y="8" width="127" height="166.5"/>
+                                                    <rect key="frame" x="8" y="8" width="127" height="167"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="127" id="4r8-yk-w7j"/>
                                                     </constraints>
@@ -78,13 +78,55 @@
                             <constraint firstItem="pb7-l6-95P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t7h-M8-yFw"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="playingTabBar" id="g8z-RH-pk2"/>
                     <connections>
                         <outlet property="movieTableView" destination="pb7-l6-95P" id="Clp-3s-zN2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="325"/>
+            <point key="canvasLocation" x="819" y="197"/>
+        </scene>
+        <!--Top rated-->
+        <scene sceneID="B7T-8h-HDe">
+            <objects>
+                <viewController id="r28-NR-cmT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bCC-ny-Opz"/>
+                        <viewControllerLayoutGuide type="bottom" id="9gE-Lq-Nrv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WTl-iZ-Lx9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Top rated" image="ratedTabBar" id="k6G-2c-RmI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hhr-yW-0q0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="819" y="1027"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="97J-s3-uMA">
+            <objects>
+                <tabBarController id="TFh-6h-Kaf" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="hre-29-EN0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="T71-IX-Cla"/>
+                        <segue destination="r28-NR-cmT" kind="relationship" relationship="viewControllers" id="1ul-Ao-E0T"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tX4-q4-Al7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13" y="276"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="playingTabBar" width="48" height="48"/>
+        <image name="ratedTabBar" width="48" height="48"/>
+    </resources>
 </document>
