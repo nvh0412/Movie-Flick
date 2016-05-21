@@ -12,9 +12,11 @@
 		1173CE541CF00F8000A228FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1173CE521CF00F8000A228FB /* Main.storyboard */; };
 		1173CE561CF00F8000A228FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1173CE551CF00F8000A228FB /* Assets.xcassets */; };
 		1173CE591CF00F8000A228FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1173CE571CF00F8000A228FB /* LaunchScreen.storyboard */; };
+		A105A245A9E388AB8DBCD75B /* Pods_FlickMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E9AB43A1AA06854FDA9A99 /* Pods_FlickMovie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EFA1A196E42B97F0C7A2D92 /* Pods-FlickMovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickMovie.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickMovie/Pods-FlickMovie.release.xcconfig"; sourceTree = "<group>"; };
 		1173CE4B1CF00F8000A228FB /* FlickMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1173CE4E1CF00F8000A228FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1173CE501CF00F8000A228FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		1173CE551CF00F8000A228FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1173CE581CF00F8000A228FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1173CE5A1CF00F8000A228FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0E9AB43A1AA06854FDA9A99 /* Pods_FlickMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E275CBAC286D07B42A946533 /* Pods-FlickMovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickMovie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickMovie/Pods-FlickMovie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A105A245A9E388AB8DBCD75B /* Pods_FlickMovie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				1173CE4D1CF00F8000A228FB /* FlickMovie */,
 				1173CE4C1CF00F8000A228FB /* Products */,
+				5E5237812E761CE617C04CB2 /* Pods */,
+				3C101AD2820F330DD9972CBA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = FlickMovie;
 			sourceTree = "<group>";
 		};
+		3C101AD2820F330DD9972CBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0E9AB43A1AA06854FDA9A99 /* Pods_FlickMovie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E5237812E761CE617C04CB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E275CBAC286D07B42A946533 /* Pods-FlickMovie.debug.xcconfig */,
+				0EFA1A196E42B97F0C7A2D92 /* Pods-FlickMovie.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1173CE5D1CF00F8000A228FB /* Build configuration list for PBXNativeTarget "FlickMovie" */;
 			buildPhases = (
+				077537EE77663EAE74ACF368 /* 📦 Check Pods Manifest.lock */,
 				1173CE471CF00F8000A228FB /* Sources */,
 				1173CE481CF00F8000A228FB /* Frameworks */,
 				1173CE491CF00F8000A228FB /* Resources */,
+				7D0E6A63DC6FD9412DBD889E /* 📦 Embed Pods Frameworks */,
+				B46B7C8E6D27C7433292663C /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		077537EE77663EAE74ACF368 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7D0E6A63DC6FD9412DBD889E /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlickMovie/Pods-FlickMovie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B46B7C8E6D27C7433292663C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlickMovie/Pods-FlickMovie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1173CE471CF00F8000A228FB /* Sources */ = {
@@ -249,6 +324,7 @@
 		};
 		1173CE5E1CF00F8000A228FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E275CBAC286D07B42A946533 /* Pods-FlickMovie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FlickMovie/Info.plist;
@@ -260,6 +336,7 @@
 		};
 		1173CE5F1CF00F8000A228FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EFA1A196E42B97F0C7A2D92 /* Pods-FlickMovie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FlickMovie/Info.plist;
@@ -288,6 +365,7 @@
 				1173CE5F1CF00F8000A228FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
