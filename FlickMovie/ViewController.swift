@@ -11,12 +11,34 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var movieTableView: UITableView!
-
+    
+    var movies: [NSDictionary]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         movieTableView.dataSource = self
         movieTableView.delegate = self
+        
+        let clientId = "a33ae33f296507677d1375d6ab54dd5f"
+        let url = NSURL(string:"http://api.themoviedb.org/3/movie/now_playing?api_key=\(clientId)")
+        let request = NSURLRequest(URL: url!)
+        let session = NSURLSession(
+            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+            delegate:nil,
+            delegateQueue:NSOperationQueue.mainQueue()
+        )
+        
+        let task : NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: { (dataOrNil, response, error) in
+                if let data = dataOrNil {
+                    if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data, options:[]) as? NSDictionary {
+                        self.movies = responseDictionary["results"] as! [NSDictionary]
+                        self.movieTableView.reloadData()
+                        NSLog("Movies: \(self.movies)")
+                    }
+                }
+        });
+        task.resume()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,12 +47,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        if let movies = movies {
+            return movies.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = movieTableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath)
-        cell.textLabel!.text = "Row \(indexPath.row)"
+        
+        let movie = movies![indexPath.row]
+        let title = movie["original_title"] as? String
+        
+        cell.textLabel!.text = title
         print("Row \(indexPath.row)")
         return cell
     }
