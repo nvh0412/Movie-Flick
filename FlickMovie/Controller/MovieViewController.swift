@@ -9,7 +9,7 @@
 import UIKit
 import AFNetworking
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet weak var movieTableView: UITableView!
     
