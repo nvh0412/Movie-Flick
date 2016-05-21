@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113B063F1CF0986500BD9CFD /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B063E1CF0986500BD9CFD /* MovieCell.swift */; };
+		113B06421CF0A68500BD9CFD /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B06411CF0A68500BD9CFD /* Movie.swift */; };
 		1152B7DE1CF026E400D5EA24 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152B7DD1CF026E400D5EA24 /* MovieAPI.swift */; };
 		1152B7E11CF02A6E00D5EA24 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152B7E01CF02A6E00D5EA24 /* HttpClient.swift */; };
 		1173CE4F1CF00F8000A228FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173CE4E1CF00F8000A228FB /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		0EFA1A196E42B97F0C7A2D92 /* Pods-FlickMovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickMovie.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickMovie/Pods-FlickMovie.release.xcconfig"; sourceTree = "<group>"; };
+		113B063E1CF0986500BD9CFD /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		113B06411CF0A68500BD9CFD /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		1152B7DD1CF026E400D5EA24 /* MovieAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		1152B7E01CF02A6E00D5EA24 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		1173CE4B1CF00F8000A228FB /* FlickMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113B063A1CF0913D00BD9CFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				113B06411CF0A68500BD9CFD /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		113B063B1CF097DE00BD9CFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				113B063E1CF0986500BD9CFD /* MovieCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		113B06401CF09A7200BD9CFD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1173CE501CF00F8000A228FB /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		1152B7DC1CF024B300D5EA24 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +109,12 @@
 		1173CE4D1CF00F8000A228FB /* FlickMovie */ = {
 			isa = PBXGroup;
 			children = (
+				113B06401CF09A7200BD9CFD /* Controller */,
+				113B063B1CF097DE00BD9CFD /* View */,
+				113B063A1CF0913D00BD9CFD /* Model */,
 				1152B7DF1CF02A4600D5EA24 /* Helper */,
 				1152B7DC1CF024B300D5EA24 /* API */,
 				1173CE4E1CF00F8000A228FB /* AppDelegate.swift */,
-				1173CE501CF00F8000A228FB /* ViewController.swift */,
 				1173CE521CF00F8000A228FB /* Main.storyboard */,
 				1173CE551CF00F8000A228FB /* Assets.xcassets */,
 				1173CE571CF00F8000A228FB /* LaunchScreen.storyboard */,
@@ -234,7 +264,9 @@
 			files = (
 				1152B7DE1CF026E400D5EA24 /* MovieAPI.swift in Sources */,
 				1173CE511CF00F8000A228FB /* ViewController.swift in Sources */,
+				113B06421CF0A68500BD9CFD /* Movie.swift in Sources */,
 				1152B7E11CF02A6E00D5EA24 /* HttpClient.swift in Sources */,
+				113B063F1CF0986500BD9CFD /* MovieCell.swift in Sources */,
 				1173CE4F1CF00F8000A228FB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
