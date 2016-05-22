@@ -33,7 +33,7 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let task : NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: { (dataOrNil, response, error) in
       if let data = dataOrNil {
         if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data, options:[]) as?NSDictionary {
-          self.movies = responseDictionary["results"] as! [NSDictionary]
+          self.movies = responseDictionary["results"] as? [NSDictionary]
           self.movieTableView.reloadData()
         }
       }
@@ -60,17 +60,25 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let movie = movies![indexPath.row]
     let title = movie["title"] as? String
     let overview = movie["overview"] as? String
+    cell.titleLabel.text = title
+    cell.overviewLabel.text = overview
     
     let baseURL = "http://image.tmdb.org/t/p/w500/"
-    let imagePath = movie["poster_path"] as! String
-    
-    let posterUrl = NSURL(string: baseURL + imagePath)
-    
-    cell.titleLabel.text = title
-    cell.overviewLabel.text = overview;
-    cell.posterView.setImageWithURL(posterUrl!)
-    
+    if let imagePath = movie["poster_path"] as? String {
+      let posterUrl = NSURL(string: baseURL + imagePath)
+      cell.posterView.setImageWithURL(posterUrl!)
+    }
+
     return cell
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let cell = sender as! UITableViewCell
+    let indexPath = movieTableView.indexPathForCell(cell)
+    let movie = movies![indexPath!.row]
+    
+    let detailViewController = segue.destinationViewController as! DetailMovieViewController
+    detailViewController.movie = movie
   }
 
 }

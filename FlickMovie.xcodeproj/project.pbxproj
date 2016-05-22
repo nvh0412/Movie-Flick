@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		113B063F1CF0986500BD9CFD /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B063E1CF0986500BD9CFD /* MovieCell.swift */; };
 		113B06421CF0A68500BD9CFD /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B06411CF0A68500BD9CFD /* Movie.swift */; };
+		113B06451CF0B40400BD9CFD /* DetailMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B06441CF0B40400BD9CFD /* DetailMovieViewController.swift */; };
 		1152B7DE1CF026E400D5EA24 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152B7DD1CF026E400D5EA24 /* MovieAPI.swift */; };
 		1152B7E11CF02A6E00D5EA24 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152B7E01CF02A6E00D5EA24 /* HttpClient.swift */; };
 		1173CE4F1CF00F8000A228FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173CE4E1CF00F8000A228FB /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 		0EFA1A196E42B97F0C7A2D92 /* Pods-FlickMovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickMovie.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickMovie/Pods-FlickMovie.release.xcconfig"; sourceTree = "<group>"; };
 		113B063E1CF0986500BD9CFD /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		113B06411CF0A68500BD9CFD /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		113B06441CF0B40400BD9CFD /* DetailMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMovieViewController.swift; sourceTree = "<group>"; };
 		1152B7DD1CF026E400D5EA24 /* MovieAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		1152B7E01CF02A6E00D5EA24 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		1173CE4B1CF00F8000A228FB /* FlickMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				1173CE501CF00F8000A228FB /* MovieViewController.swift */,
+				113B06441CF0B40400BD9CFD /* DetailMovieViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			files = (
 				1152B7DE1CF026E400D5EA24 /* MovieAPI.swift in Sources */,
 				1173CE511CF00F8000A228FB /* MovieViewController.swift in Sources */,
+				113B06451CF0B40400BD9CFD /* DetailMovieViewController.swift in Sources */,
 				113B06421CF0A68500BD9CFD /* Movie.swift in Sources */,
 				1152B7E11CF02A6E00D5EA24 /* HttpClient.swift in Sources */,
 				113B063F1CF0986500BD9CFD /* MovieCell.swift in Sources */,
