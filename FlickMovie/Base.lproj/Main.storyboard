@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TFh-6h-Kaf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bzT-Um-jHo">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -171,47 +171,10 @@
             </objects>
             <point key="canvasLocation" x="1631" y="997"/>
         </scene>
-        <!--Top rated-->
-        <scene sceneID="B7T-8h-HDe">
-            <objects>
-                <viewController id="r28-NR-cmT" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bCC-ny-Opz"/>
-                        <viewControllerLayoutGuide type="bottom" id="9gE-Lq-Nrv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WTl-iZ-Lx9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Top rated" image="ratedTabBar" id="k6G-2c-RmI"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hhr-yW-0q0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="805" y="1351"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="97J-s3-uMA">
-            <objects>
-                <tabBarController id="TFh-6h-Kaf" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="hre-29-EN0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="bzT-Um-jHo" kind="relationship" relationship="viewControllers" id="T71-IX-Cla"/>
-                        <segue destination="r28-NR-cmT" kind="relationship" relationship="viewControllers" id="1ul-Ao-E0T"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tX4-q4-Al7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="13" y="276"/>
-        </scene>
         <!--Now Playing-->
         <scene sceneID="8c7-ec-2rq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bzT-Um-jHo" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MovieNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="bzT-Um-jHo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Now Playing" image="playingTabBar" id="g8z-RH-pk2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ae-Np-br5">
@@ -230,6 +193,5 @@
     </scenes>
     <resources>
         <image name="playingTabBar" width="48" height="48"/>
-        <image name="ratedTabBar" width="48" height="48"/>
     </resources>
 </document>
