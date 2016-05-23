@@ -105,21 +105,26 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="600" id="9cF-vi-C0O"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9cF-vi-C0O"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjV-mi-kyw">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ytM-NI-rpW">
-                                        <rect key="frame" x="15" y="613" width="550" height="187"/>
+                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ytM-NI-rpW">
+                                        <rect key="frame" x="15" y="613" width="570" height="187"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjJ-qg-W0P">
-                                                <rect key="frame" x="16" y="14" width="534" height="27"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjJ-qg-W0P">
+                                                <rect key="frame" x="16" y="14" width="554" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfm-l5-xYh">
-                                                <rect key="frame" x="16" y="49" width="534" height="138"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfm-l5-xYh">
+                                                <rect key="frame" x="16" y="49" width="554" height="138"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -150,14 +155,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="AJ3-xd-mRQ" secondAttribute="trailing" constant="-20" id="06W-wk-zGS"/>
+                            <constraint firstItem="AJ3-xd-mRQ" firstAttribute="bottom" secondItem="kKz-ej-7OO" secondAttribute="top" id="7kI-Hr-3xt"/>
                             <constraint firstItem="xjV-mi-kyw" firstAttribute="top" secondItem="ISw-4E-p5P" secondAttribute="bottom" constant="-64" id="K5R-g6-3ET"/>
                             <constraint firstItem="kKz-ej-7OO" firstAttribute="top" secondItem="AJ3-xd-mRQ" secondAttribute="bottom" constant="-49" id="KXR-dd-dWX"/>
                             <constraint firstItem="kKz-ej-7OO" firstAttribute="top" secondItem="xjV-mi-kyw" secondAttribute="bottom" id="LBr-e5-pfs"/>
                             <constraint firstItem="AJ3-xd-mRQ" firstAttribute="top" secondItem="ISw-4E-p5P" secondAttribute="bottom" constant="-64" id="Og5-pE-gVR"/>
                             <constraint firstItem="AJ3-xd-mRQ" firstAttribute="leading" secondItem="9U0-HH-ou9" secondAttribute="leadingMargin" constant="-20" id="Pbr-Bh-q0Z"/>
+                            <constraint firstItem="AJ3-xd-mRQ" firstAttribute="top" secondItem="xjV-mi-kyw" secondAttribute="top" id="VFg-wf-nrG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xjV-mi-kyw" secondAttribute="trailing" constant="-20" id="XUd-ec-8zg"/>
                             <constraint firstItem="xjV-mi-kyw" firstAttribute="leading" secondItem="9U0-HH-ou9" secondAttribute="leadingMargin" constant="-20" id="cGa-D7-v17"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Og5-pE-gVR"/>
+                                <exclude reference="KXR-dd-dWX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="inforView" destination="ytM-NI-rpW" id="HVG-lB-yHT"/>

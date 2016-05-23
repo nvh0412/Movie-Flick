@@ -14,6 +14,7 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
   @IBOutlet weak var movieTableView: UITableView!
     
   var movies: [NSDictionary]?
+  var endpoint: String!
     
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,7 +23,7 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     movieTableView.delegate = self
     
     let clientId = "a33ae33f296507677d1375d6ab54dd5f"
-    let url = NSURL(string:"http://api.themoviedb.org/3/movie/now_playing?api_key=\(clientId)")
+    let url = NSURL(string:"http://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(clientId)")
     let request = NSURLRequest(URL: url!)
     let session = NSURLSession(
       configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
