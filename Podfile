@@ -8,4 +8,5 @@ target 'FlickMovie' do
   # Pods for FlickMovie
   pod 'SwiftyJSON'
   pod 'AFNetworking', '~> 2.5'
+  pod 'MBProgressHUD'
 end

@@ -8,6 +8,7 @@
 
 import UIKit
 import AFNetworking
+import MBProgressHUD
 
 class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -22,24 +23,7 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     movieTableView.dataSource = self
     movieTableView.delegate = self
     
-    let clientId = "a33ae33f296507677d1375d6ab54dd5f"
-    let url = NSURL(string:"http://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(clientId)")
-    let request = NSURLRequest(URL: url!)
-    let session = NSURLSession(
-      configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
-      delegate:nil,
-      delegateQueue:NSOperationQueue.mainQueue()
-    )
-
-    let task : NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: { (dataOrNil, response, error) in
-      if let data = dataOrNil {
-        if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data, options:[]) as?NSDictionary {
-          self.movies = responseDictionary["results"] as? [NSDictionary]
-          self.movieTableView.reloadData()
-        }
-      }
-    });
-    task.resume()
+    loadDataFromNetwork()
   }
 
   override func didReceiveMemoryWarning() {
@@ -80,6 +64,31 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     let detailViewController = segue.destinationViewController as! DetailMovieViewController
     detailViewController.movie = movie
+  }
+  
+  func loadDataFromNetwork() {
+    let clientId = "a33ae33f296507677d1375d6ab54dd5f"
+    let url = NSURL(string:"http://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(clientId)")
+    let request = NSURLRequest(URL: url!)
+    let session = NSURLSession(
+      configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+      delegate:nil,
+      delegateQueue:NSOperationQueue.mainQueue()
+    )
+    
+    // Display HUB right before the request is made
+    MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+    
+    let task : NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: { (dataOrNil, response, error) in
+      MBProgressHUD.hideHUDForView(self.view, animated: true)
+      if let data = dataOrNil {
+        if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data, options:[]) as?NSDictionary {
+          self.movies = responseDictionary["results"] as? [NSDictionary]
+          self.movieTableView.reloadData()
+        }
+      }
+    });
+    task.resume()
   }
 
 }
