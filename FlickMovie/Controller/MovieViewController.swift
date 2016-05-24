@@ -23,7 +23,10 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     movieTableView.dataSource = self
     movieTableView.delegate = self
     
-    loadDataFromNetwork()
+    let refreshControl = UIRefreshControl()
+    loadDataFromNetwork(refreshControl)
+    refreshControl.addTarget(self, action: #selector(loadDataFromNetwork(_:)), forControlEvents: UIControlEvents.ValueChanged)
+    movieTableView.insertSubview(refreshControl, atIndex: 0)
   }
 
   override func didReceiveMemoryWarning() {
@@ -66,7 +69,7 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     detailViewController.movie = movie
   }
   
-  func loadDataFromNetwork() {
+  func loadDataFromNetwork(refreshControl: UIRefreshControl) {
     let clientId = "a33ae33f296507677d1375d6ab54dd5f"
     let url = NSURL(string:"http://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(clientId)")
     let request = NSURLRequest(URL: url!)
@@ -85,6 +88,7 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data, options:[]) as?NSDictionary {
           self.movies = responseDictionary["results"] as? [NSDictionary]
           self.movieTableView.reloadData()
+          refreshControl.endRefreshing()
         }
       }
     });
