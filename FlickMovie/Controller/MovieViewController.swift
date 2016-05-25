@@ -24,7 +24,6 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // Do any additional setup after loading the view, typically from a nib.
     movieTableView.dataSource = self
     movieTableView.delegate = self
-    errorView.hidden = true
 
     let refreshControl = UIRefreshControl()
     loadDataFromNetwork(refreshControl)
@@ -81,18 +80,10 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
   func loadDataFromNetwork(refreshControl: UIRefreshControl) {
     let clientId = "a33ae33f296507677d1375d6ab54dd5f"
     let url = NSURL(string:"http://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(clientId)")
-//    let request = NSURLRequest(URL: url!)
     let session = NSURLSession.sharedSession()
-//    let session = NSURLSession(
-//      configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
-//      delegate:nil,
-//      delegateQueue:NSOperationQueue.mainQueue()
-//    )
     
     // Display HUB right before the request is made
-    
     let task : NSURLSessionDataTask = session.dataTaskWithURL(url!, completionHandler: { (dataOrNil, response, error) in
-      NSURLCache.sharedURLCache().removeAllCachedResponses()
       guard (error == nil) else {
         print("Error")
         self.performUIUpdatesOnMain {
@@ -115,6 +106,7 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
       }
     });
+    NSURLCache.sharedURLCache().removeCachedResponseForDataTask(task)
     task.resume()
   }
 

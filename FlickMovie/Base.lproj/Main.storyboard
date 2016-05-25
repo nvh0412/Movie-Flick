@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="183"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Td-WU-hxW" id="plq-xW-77h">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="183"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="182.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZX-lB-qKv">
@@ -70,25 +70,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wIg-sN-shE">
-                                <rect key="frame" x="0.0" y="64" width="600" height="36"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIg-sN-shE">
+                                <rect key="frame" x="0.0" y="64" width="600" height="136"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network Error " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eV-x6-umt">
-                                        <rect key="frame" x="0.0" y="7" width="600" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Networking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M03-IH-We2">
+                                        <rect key="frame" x="235" y="57" width="130" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="M03-IH-We2" firstAttribute="centerY" secondItem="wIg-sN-shE" secondAttribute="centerY" id="RaC-Wa-n6q"/>
+                                    <constraint firstItem="M03-IH-We2" firstAttribute="centerX" secondItem="wIg-sN-shE" secondAttribute="centerX" id="iut-BB-9tD"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pb7-l6-95P" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="6Bs-oA-zfj"/>
-                            <constraint firstAttribute="trailing" secondItem="pb7-l6-95P" secondAttribute="trailing" id="HM7-5z-2cF"/>
-                            <constraint firstItem="pb7-l6-95P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dJ7-u0-dNC"/>
-                            <constraint firstItem="pb7-l6-95P" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="js6-vO-brN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pb7-l6-95P" secondAttribute="bottom" id="5XH-B2-enH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wIg-sN-shE" secondAttribute="bottom" constant="400" id="5it-72-dom"/>
+                            <constraint firstItem="wIg-sN-shE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KVb-Dl-Ve0"/>
+                            <constraint firstItem="pb7-l6-95P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="NMg-pG-Ojg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wIg-sN-shE" secondAttribute="trailing" constant="-20" id="Ox8-Zv-lbe"/>
+                            <constraint firstItem="pb7-l6-95P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="dqZ-J3-maJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pb7-l6-95P" secondAttribute="trailing" constant="-20" id="eHe-Yt-niy"/>
+                            <constraint firstItem="wIg-sN-shE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="est-Fo-VHW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Rl7-KW-weJ"/>
@@ -99,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631" y="197"/>
+            <point key="canvasLocation" x="1631" y="204"/>
         </scene>
         <!--Detail Movie View Controller-->
         <scene sceneID="b7h-nE-CEp">
