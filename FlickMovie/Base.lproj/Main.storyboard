@@ -70,33 +70,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIg-sN-shE">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wIg-sN-shE">
                                 <rect key="frame" x="0.0" y="64" width="600" height="36"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Error " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eV-x6-umt">
-                                        <rect key="frame" x="245" y="8" width="111" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network Error " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eV-x6-umt">
+                                        <rect key="frame" x="0.0" y="7" width="600" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="8eV-x6-umt" firstAttribute="centerY" secondItem="wIg-sN-shE" secondAttribute="centerY" id="91c-9N-tJC"/>
-                                    <constraint firstItem="8eV-x6-umt" firstAttribute="centerX" secondItem="wIg-sN-shE" secondAttribute="centerX" id="rFR-qa-cCw"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wIg-sN-shE" firstAttribute="trailing" secondItem="pb7-l6-95P" secondAttribute="trailing" id="3hz-dY-rBV"/>
                             <constraint firstItem="pb7-l6-95P" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="6Bs-oA-zfj"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wIg-sN-shE" secondAttribute="bottom" constant="500" id="6dq-Wu-Er1"/>
-                            <constraint firstItem="wIg-sN-shE" firstAttribute="leading" secondItem="pb7-l6-95P" secondAttribute="leading" id="8FQ-0S-3EE"/>
-                            <constraint firstAttribute="trailing" secondItem="wIg-sN-shE" secondAttribute="trailing" id="BpS-ow-fAK"/>
-                            <constraint firstItem="wIg-sN-shE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ci0-ma-GRj"/>
+                            <constraint firstAttribute="trailing" secondItem="pb7-l6-95P" secondAttribute="trailing" id="HM7-5z-2cF"/>
+                            <constraint firstItem="pb7-l6-95P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dJ7-u0-dNC"/>
                             <constraint firstItem="pb7-l6-95P" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="js6-vO-brN"/>
-                            <constraint firstItem="wIg-sN-shE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ndB-br-AwD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Rl7-KW-weJ"/>

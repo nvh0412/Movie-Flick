@@ -9,6 +9,7 @@
 import UIKit
 import AFNetworking
 import MBProgressHUD
+import Foundation
 
 class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -23,7 +24,7 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // Do any additional setup after loading the view, typically from a nib.
     movieTableView.dataSource = self
     movieTableView.delegate = self
-    errorView.hidden = false
+    errorView.hidden = true
 
     let refreshControl = UIRefreshControl()
     loadDataFromNetwork(refreshControl)
@@ -71,6 +72,12 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     detailViewController.movie = movie
   }
   
+  func performUIUpdatesOnMain(updates: () -> Void) {
+    dispatch_async(dispatch_get_main_queue()) {
+      updates()
+    }
+  }
+  
   func loadDataFromNetwork(refreshControl: UIRefreshControl) {
     let clientId = "a33ae33f296507677d1375d6ab54dd5f"
     let url = NSURL(string:"http://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(clientId)")
@@ -85,21 +92,25 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // Display HUB right before the request is made
     
     let task : NSURLSessionDataTask = session.dataTaskWithURL(url!, completionHandler: { (dataOrNil, response, error) in
-      
+      NSURLCache.sharedURLCache().removeAllCachedResponses()
       guard (error == nil) else {
-        NSLog("Error")
-        self.errorView.hidden = true
-        refreshControl.endRefreshing()
+        print("Error")
+        self.performUIUpdatesOnMain {
+          self.errorView.hidden = false
+          refreshControl.endRefreshing()
+        }
         return
       }
       
       if error == nil {
-        NSLog("NON Error")
         if let data = dataOrNil {
           if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data, options:[]) as?NSDictionary {
-            self.movies = responseDictionary["results"] as? [NSDictionary]
-            self.movieTableView.reloadData()
-            refreshControl.endRefreshing()
+            self.performUIUpdatesOnMain {
+              self.errorView.hidden = true
+              self.movies = responseDictionary["results"] as? [NSDictionary]
+              self.movieTableView.reloadData()
+              refreshControl.endRefreshing()
+            }
           }
         }
       }
