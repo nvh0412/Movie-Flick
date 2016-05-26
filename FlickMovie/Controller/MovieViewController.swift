@@ -18,12 +18,19 @@ class MovieViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
   var movies: [NSDictionary]?
   var endpoint: String!
-
+  let searchController = UISearchController(searchResultsController: nil)
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     movieTableView.dataSource = self
     movieTableView.delegate = self
+    
+    
+//    searchController.searchResultsUpdater = self
+    searchController.dimsBackgroundDuringPresentation = false
+    definesPresentationContext = true
+    movieTableView.tableHeaderView = searchController.searchBar
 
     let refreshControl = UIRefreshControl()
     loadDataFromNetwork(refreshControl)
